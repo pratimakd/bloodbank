@@ -1,0 +1,126 @@
+{% extends 'base-admin.html' %}
+{% load static %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <i class="fas fa-users" style="color:#CE182B"></i>
+                    </div><br>
+                    <div>
+                        Total Donors <br>
+                        {{totaldonors}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <i class="fas fa-spinner" style="color:#CE182B"></i>
+                    </div><br>
+                    <div>
+                        Total Requests <br>
+                        {{totalrequest}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <i class="far fa-check-circle" style="color:#CE182B"></i>
+                    </div><br>
+                    <div>
+                        Approved Requests <br>
+                        {{totalapprovedrequest}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="blood">
+                        <i class="fas fa-tint xyz" style="color:#CE182B"></i>
+                    </div><br>
+                    <div>
+                        Total Blood Unit (in ml) <br>
+                        {{totalbloodunit}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      
+        <div id="container" style="width: 85%">
+          <canvas id="pie-chart"></canvas>
+        
+
+        
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div id="container" style="width: 100%">
+        <canvas id="bar-chart"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        
+      <script>
+        console.log("data",'{{data}}')
+        console.log("labels",'{{labels}}')
+        var config = {
+        type: 'bar',
+        data: {
+            datasets: [{
+            data: {{ data_bar|safe }},
+            backgroundColor: ['#de425b','#e9747e','#f09fa2','#f3c8c9','#f1f1f1','#bed6ce','#8cbcac','#57a18b',],
+            label: 'New Requests'
+            }],
+            labels: {{ labels_bar|safe }}
+        },
+        options: {
+            responsive: true
+        }
+        };
+
+         var config2 = {
+            type: 'pie',
+            data: {
+                datasets: [{
+                data: {{ data_pie|safe }},
+                backgroundColor: [
+                    '#de425b','#e9747e','#f09fa2','#f3c8c9','#f1f1f1','#bed6ce','#8cbcac','#57a18b',
+                ],
+                label: 'Bloodgroup Stock'
+                }],
+                labels: {{ labels_pie|safe }}
+            },
+            options: {
+                responsive: true
+            }
+        };
+
+        window.onload = function() {
+        var ctx = document.getElementById('bar-chart').getContext('2d');
+        window.myBar = new Chart(ctx, config);
+
+        var ctx2 = document.getElementById("pie-chart").getContext("2d");
+            window.myPie = new Chart(ctx2, config2);
+        };
+      </script>
+    </div>
+  </div>
+</div>
+
+{% endblock %}​

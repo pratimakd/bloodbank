@@ -1,0 +1,112 @@
+{% extends 'base-admin.html' %}​
+{% load static %}
+
+{% block content %}
+
+<head>
+    <style>
+        .label {
+            color: white;
+            padding: 8px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .info {
+            background-color: #2196F3;
+        }
+
+        /* Blue */
+        .warning {
+            background-color: #ff9800;
+        }
+
+        /* Orange */
+        .danger {
+            background-color: #f44336;
+        }
+
+        /* Red */
+        .other {
+            background-color: #e7e7e7;
+            color: black;
+        }
+
+        /* Gray */
+
+        .success_message{
+        background:#50d165;
+        color:#fff;
+        border-radius:5px;
+        }
+        
+        
+        .error_message{
+        background:red;
+        color:#fff;
+        border-radius:5px;
+        }
+    </style>
+</head>
+<br><br>
+
+<div class="container">
+    <div class="offset-md-3 col-md-6">
+    {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+    {% endif %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+    <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+    {% endif %}
+    {% endfor %}
+    </div>
+    <H4 class="text-center">BLOOD DONATION DETAILS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-danger">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Bloodgroup</th>
+                <th scope="col">Status</th>
+                <th scope="col">Unit</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for req in reqs %}
+            <tr>
+                <td> {{req.name}}</td>
+                <td>{{req.phone}}</td>
+                <td>{{req.email}}</td>
+                <td>{{req.bloodgroup}}</td>
+                <td>{{req.status}}</td>
+                <td>{{req.unit}}</td>
+                {% if req.status == 'Pending' %}
+                <td class="text-center">
+                    <button class="btn btn-primary badge-pill" style="width: 100px;"><a
+                            style="text-decoration: none;color: white;"
+                            href="{% url 'approve-request' req.id  %}">APPROVE</a> </button>
+                    <button class="btn btn-danger badge-pill" style="width: 80px;"><a
+                            style="text-decoration: none;color: white;"
+                            href="{% url 'reject-request' req.id %}">REJECT</a> </button>
+                </td>
+                {% elif req.status == 'Approved' %}
+                <td><span class="label success">{{req.unit}} Approved</span></td>
+
+                {% else %}
+                <td><span class="label danger">"Rejected"</span></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+</div>
+
+{% endblock %}

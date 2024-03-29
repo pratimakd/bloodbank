@@ -1,0 +1,41 @@
+<input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn" style="z-index: 1000;"></i>
+      <i class="fas fa-times" id="cancel" style="z-index: 1000;"></i>
+    </label>
+    <div class="sidebar" style="z-index: 1000;">
+    {% load static %}
+      <header> Menu </header>
+      <a href="/admins/dashboard">
+        <i class="fas fa-qrcode"></i>
+        <span>Home</span>
+      </a>
+      <a href="/admins/getrequestform">
+        <i class="fas fa-envelope"></i>
+        <span>Blood Requests</span>
+      </a>
+      <a href="/admins/getdonorform">
+        <i class="fas fa-hospital-user"></i>
+        <span>Donors</span>
+      </a>
+      <a href="/admins/getcontactform">
+         <i class="fas fa-user-injured"></i>
+        <span>Messages</span>
+      </a>
+      <a href="/admins/getstockform">
+        <i class="fas fa-cubes"></i>
+        <span>Stock</span>
+      </a>
+      <a href="/addTeamForm">
+        <i class="fas fa-user"></i>
+        <span>Add Team</span>
+      </a>
+      <a href="/addEventForm">
+        <i class="fas fa-calendar"></i>
+        <span>Add Events</span>
+      </a>
+      <a href="/accounts/logout">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </a>
+    </div>

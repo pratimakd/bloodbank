@@ -1,0 +1,44 @@
+{% extends 'base-admin.html' %}​
+{% load static %}
+
+{% block content %}
+
+<head>
+    <style>
+   .success {background-color: #4CAF50;} /* Green */
+   .info {background-color: #2196F3;} /* Blue */
+   .warning {background-color: #ff9800;} /* Orange */
+   .danger {background-color: #f44336;} /* Red */
+   .other {background-color: #e7e7e7; color: black;} /* Gray */
+    </style>
+
+</head>
+<br><br>
+
+<div class="container">
+    
+    <H4 class="text-center">STOCK DETAILS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-danger">
+            <tr>
+                
+                <th scope="col">Bloodgroup</th>
+                <th scope="col">Unit(in ml)</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in stock %}
+            <tr>
+                
+                <td>{{s.bloodgroup}}</td>
+                <td>{{s.unit}}</td>      
+            </tr>  
+            {% endfor %}                                  
+        </tbody>
+    
+    </table>
+</div>
+
+{% endblock %}
+

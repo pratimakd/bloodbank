@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+  .success_message {
+    background: #1ed86b;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+
+  .error_message {
+    background: orange;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .contact-form {
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+  }
+
+  .contact-form .form-control {
+    border-radius: 1rem;
+  }
+
+  .iframe-container {
+    overflow: hidden;
+    /* 16:9 aspect ratio */
+    padding-top: 56.25%;
+    position: relative;
+  }
+
+  .iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 5%;
+    position: absolute;
+    top: 0;
+    width: 90%;
+  }
+
+  .contact-form form {
+    padding: 5%;
+  }
+
+  .contact-form form .row {
+    margin-bottom: -7%;
+  }
+
+
+  .contact-form .btnContact {
+    width: 50%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #dc3545;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+</style>
+
+
+<section class="breadcrumb breadcrumb_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb_iner text-center">
+          <div class="breadcrumb_iner_item">
+            <h1>Contact</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="iframe-container mt-5">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14131.983936374509!2d85.3129068!3d27.
+    686519!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1587ec6cea8b9340!2sHamro%20Lifebank!5e0!3m2!1sen!2snp!4
+    v1626890727772!5m2!1sen!2snp" width="1100" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+</div>
+
+<div class="container contact-form">
+  <div class="offset-md-3 col-md-6">
+    {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+    <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+    {% endif %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+    <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <h2 style="color: crimson; font-family:sans-serif;">Get in Touch</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Your Name *" {{form.name}} </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your Email *" {{form.email}} </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Phone Number *" {{form.phone}} </div>
+              <div class="form-group form-button">
+                <input type="submit" class="btnContact" action="submit" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"
+                  {{form.notes}} </div>
+              </div>
+            </div>
+  </form>
+</div>
+
+{% endblock %}

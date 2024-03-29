@@ -1,0 +1,649 @@
+/* home */
+*{
+  box-sizing: border-box;
+}
+.carousel .carousel-item{
+    height: 500px;
+}
+.carousel-item .img{
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+    width: fit-content;
+}
+.btn{
+
+    padding:  13px;
+    font-family: sans-serif;
+    border-radius: 25px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border:  1px solid transparent;
+    font-size: 1 rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+.event-click-button{
+    color:white;
+    background-color: #cf3d3c !important;
+
+}
+.h3{
+    color:cornflowerblue;
+    line-height: 1.5rem;
+    font-weight: 500;
+}
+
+
+.askblood{
+    padding: 15px 32px;
+    font-size: 16px;
+    background-color:#cf3d3c;
+    color: white; 
+    border: #cf3d3c;
+    transition-duration: 4s;
+  
+    
+    }
+    
+.askblood:hover{
+    color: white;
+    background-color:red; 
+
+}
+
+
+
+
+    .header{
+    height: 100vh;
+    background-image: url(https://i.postimg.cc/tTBd9dnz/2.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    }
+    .banner-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    .banner-text h2 {
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    }
+    .content-area h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 30px;
+    font-size: 45px;
+    }     
+    .statistic-area{
+    background-image: url(1.jpg);
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
+    }
+    .section-padding{
+    padding: 80px 0;
+    }
+    .statistic-area .sts-overlay {
+    background: rgba(0,0,0,0.8);
+    }
+    
+    .single-count i {
+    color: #ffffff;
+    font-size: 35px;
+    }
+    
+    .single-count h2 {
+    font-size: 50px;
+    color: darkorange;
+    font-weight: 700;
+    }
+    
+    .single-count p {
+    font-size: 18px;
+    color: #ffffff;
+    } 
+    
+
+
+/* ask for blood */
+.form-control{
+  height: 35px;
+}
+/* ask for blood */
+
+
+/* Service section */
+.icon-box h5{
+  z-index: 9;
+  position: absolute;
+  top: 220px;
+  left: 290px;
+  font-size: 60px;
+  font-weight: 600;
+  color: #cf3d3c;
+  opacity: 0.2;
+}
+.featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+  }
+  .featured-services .icon-box::before {
+    content: '';
+    position: absolute;
+    background: #f2d9d9;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  .featured-services .icon-box:hover::before {
+    background: #aa1b1b;
+    top: 0;
+    border-radius: 0px;
+  }
+  .featured-services .icon {
+    margin-bottom: 15px;
+  }
+  .featured-services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color: #aa1b1b;
+    transition: all 0.3s ease-in-out;
+  }
+  .featured-services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .featured-services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+  .featured-services .icon-box:hover, .featured-services .icon-box:hover .description {
+    color: #fff;
+  }
+
+  .featured-services .icon-box:hover h4{
+    color: #fff;
+  } 
+
+  .featured-services .icon-box:hover .icon i, .featured-services .icon-box:hover h5 {
+    color: #fff;
+  }
+
+/* Service section ends */
+
+/* feature section */
+
+.feature_part {
+    position: relative;
+    padding-top: 1%;
+    z-index: 1;
+
+}
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-between {
+    justify-content: space-between!important;
+}
+p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #888;
+}
+.hamro {
+    font-style: italic;
+}
+.row2 {
+    display: flex;
+    /* margin-right: -15px; */
+    margin-left: -15px;
+}
+.feature_part .feature_part_text .feature_part_text_inner {
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    border: 1px solid #eeeeee;
+    text-align: center;
+    padding: 34px 27px 31px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background-color: #f6e8e8;
+}
+.feature_part .feature_part_text .feature_part_text_inner h4 {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    color: #cf3d3c;
+}
+.feature_part .feature_part_text .feature_part_text_inner p {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.667;
+}
+
+/* feature section ends*/
+
+
+/* Team section */ 
+
+.card{
+    width: 90%;
+    padding: 10px;
+}
+
+
+.card-img-top{
+    height: 40vh !important;
+    width: 100%;
+    object-fit:cover;
+}
+
+.card-body{
+    background-color: antiquewhite;
+    
+}
+.container .card .social {
+    position: relative;
+    left: 0;
+    bottom: 40px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .card .social a {
+transition: color 0.3s;
+color: #353535;
+margin: 0 3px;
+border-radius: 50px;
+width: 36px;
+height: 36px;
+background: #aa1b1b;
+display: inline-block;
+transition: ease-in-out 0.3s;
+color: #fff;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+.container .card .social a:hover {
+background: #aa1b1b;
+}
+.container .card .social i {
+font-size: 18px;
+line-height: 0;
+}
+.container .card:hover .social {
+opacity: 1;
+bottom: 0px;
+} 
+/* Team section ends */
+
+
+
+/* Blood basics CSS */
+
+
+.breadcrumb_bg {
+background-image: url("../images/Slider-background.png");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: white;
+border-radius: 0 !important;
+height: 400px;
+
+}
+
+.breadcrumb {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  
+  .breadcrumb .breadcrumb_iner {
+    height: 475px;
+    width: 100%;
+    display: table;
+  }
+  
+ 
+  .breadcrumb .breadcrumb_iner .breadcrumb_iner_item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  /* line 19, ../../01 cl html template/03_jun 2019/184_SAAS_template/sass/_breadcrumb.scss */
+  .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h1 {
+  
+    color: #fff;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 150px;
+    text-transform: capitalize;
+  }
+  
+  @media (max-width: 576px) {
+  
+    
+    .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+  
+ 
+    .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+   
+    .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
+      font-size: 40px;
+    }
+  }
+  
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  
+   
+    .breadcrumb .breadcrumb_iner .breadcrumb_iner_item h2 {
+      font-size: 50px;
+    }
+  }
+  
+  
+  .breadcrumb .breadcrumb_iner .breadcrumb_iner_item p {
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  
+  .breadcrumb .breadcrumb_iner .breadcrumb_iner_item span {
+    margin: 0px 5px;
+    font-size: 12px;
+  }
+  .breadcrumb {
+    margin-bottom: 0px !important;
+  }
+
+  .linespace {
+    line-height: 25px !important;
+  }
+  
+  
+  /* ul {
+    padding-left: 3% !important;
+    
+  } */
+
+  .unordered-list{
+    font-size: 16px;
+  }
+
+  .unordered-list li{  
+        list-style-type: circle;
+  }
+/* Blood basics CSS ends */
+
+
+ /* Cliens */
+
+.partner-bg {
+  background-color: #f8f8f8e1;
+}
+.cliens {
+  padding: 12px 0;
+  text-align: center;
+}
+.cliens img {
+  max-width: 95%;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  padding: 15px 0;
+
+}
+.cliens img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .cliens img {
+    max-width: 50%;
+  }
+}
+
+
+  
+/* Corona Grantee section */
+    /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+    .section {
+        padding: 60px 0;
+        overflow: hidden;
+    }
+
+    .section-title {
+        text-align: center;
+        padding: 30px 0;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        color: #191919;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title span {
+        position: absolute;
+        top: 30px;
+        color: #f4f4f4;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-weight: 700;
+        font-size: 52px;
+        text-transform: uppercase;
+        line-height: 0;
+    }
+
+    .section-title p {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    @media (max-width: 575px) {
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            font-size: 38px;
+        }
+    }
+
+    /*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+    .about .content h3 {
+        font-weight: 600;
+        font-size: 26px;
+    }
+
+    .about .content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .about .content ul li {
+        padding-bottom: 10px;
+    }
+
+    .about .content ul i {
+        font-size: 20px;
+        padding-right: 4px;
+        color: #cc1616;
+    }
+
+    .about .content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+    .counts {
+        padding-top: 80px;
+    }
+
+    .counts .count-box {
+        padding: 30px 30px 25px 30px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        background-color: #ff5757;
+        box-shadow: 0px 2px 35px rgba(83, 79, 100, 0.205);
+        border-radius: 4px;
+    }
+
+    .sss {
+        color: white;
+    }
+
+    .counts .count-box i {
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        top: -27px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        background: #fff;
+        color: #fafafa;
+        border-radius: 50px;
+        border: 2px solid #fff;
+        box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .counts .count-box span {
+        font-size: 36px;
+        display: block;
+        font-weight: 700;
+        color: #fff9f9;
+    }
+
+    .counts .count-box p {
+        padding: 0;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+    }
+
+    /*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+    .why-us {
+        padding-top: 10px;
+    }
+
+    .why-us .box {
+        padding: 50px 30px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        transition: all ease-in-out 0.3s;
+        background-color: #ececec;
+    }
+
+    .why-us .box span {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        color: #ed5b5b;
+    }
+
+    .why-us .box h4 {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 0;
+        margin: 20px 0;
+        color: #191919;
+    }
+
+    .aaa {
+        border-color: #cc1616;
+    }
+
+    .why-us .box p {
+        color: #000000;
+        font-size: 16px;
+        margin: 0;
+        text-align: center;
+        text-decoration: underline;
+
+        font-family: "Poppins", sans-serif;
+    }
+
+    .why-us .box:hover {
+        background: #cc1616;
+        padding: 30px 30px 70px 30px;
+        box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .why-us .box:hover span,
+    .why-us .box:hover h4,
+    .why-us .box:hover p {
+        color: #fff;
+    }
+
+/* Corona Grantee section ends*/

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+
+<div class="bradcam_area breadcam_bg bradcam_overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>Events</h3>
+                    <p><a href="/home">Home /</a> Events</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    <article class="blog_item">
+                        {% for event in events %} 
+                        <div class="blog_item_img">
+                            <img class="card-img rounded-0"
+                                src="{{ event.image }}" alt=""
+                                data-pagespeed-url-hash="1748394853"
+                                onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <a href="#" class="blog_item_date">
+                                <h3>{{ event.date }}</h3>
+                                
+                            </a>
+                        </div>
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="single-blog.html">
+                                <h2>{{ event.eventname }}</h2>
+                            </a>
+                            <p>{{ event.description }}</p>
+                           
+                        </div>
+                        {% endfor %}
+                    </article>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form class="form" method="GET">
+                            {{event_filter.form}}
+                            <button class="button rounded-0 primary-bg  text-white w-100 btn_1 boxed-btn"  style="background-color: indianred; margin-top:10px;"
+                                type="submit">Search</button>
+                        </form>
+                    </aside>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var x=document.getElementsByTagName("label");
+    x[0].innerHTML=" Search By Event Name"
+</script>
+{% endblock %}

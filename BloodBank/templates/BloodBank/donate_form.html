@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %} 
+<style>
+.success_message{
+    background:#50d165;
+    color:#fff;
+    border-radius:5px;
+ }
+    
+    
+.error_message{
+    background:orange;
+    color:#fff;
+    border-radius:5px;
+}
+</style>
+
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="offset-md-3 col-md-6">
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+        <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% endfor %}
+        </div>
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body" style="background-color: antiquewhite; ">
+                    <h2 class="title">Donate Form</h2>
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name" {{form.name}}
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Age" name="age" {{form.age}}
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Phone" name="phone" {{form.phone}}
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Address" name="address" {{form.address}}
+                        </div>
+                        
+                        {{form.gender|as_crispy_field}}
+                        {{form.bloodgroup|as_crispy_field}}
+
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Enter unit of blood(eg: 1, 2)" name="unit" {{form.unit}}
+                        </div>
+
+                       
+
+
+                        <div class="text-center p-t-10">
+                            <button class="btnd btn--pill btn--green" type="submit" style=" display: inline-block;
+                            line-height: 40px;padding: 0 33px;font-family: Poppins, Arial, sans-serif;
+                            cursor: pointer;color: #fff; transition: all 0.4s ease;font-size: 18px;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% comment %} {% extends 'base.html' %}
+{% load crispy_forms_filters %}
+ {% block content %}
+ <form action="" method="post">
+    {% csrf_token %}
+    {{form| crispy}}
+    <input type = "submit">
+</form> 
+{% endblock %} {% endcomment %}
+
+<style>
+    .label{
+        padding-right:10px;
+    }
+
+    #id_gender{
+        width: 15rem;
+    }
+    #id_bloodgroup{
+        width: 15rem;
+    }
+
+
+</style>

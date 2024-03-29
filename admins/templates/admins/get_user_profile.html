@@ -1,0 +1,46 @@
+
+{% extends 'base-admin.html' %}
+{% block content %}
+{%load static%}
+<br><br>
+<div class="container">
+    <H4 class="text-center">DONOR DETAILS</H4><br>
+    <table class="table table-light table-hover table-bordered table-striped">
+        <thead class="bg-info">
+            <tr>
+                
+     
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Picture</th>
+                <th scope="col">Created Date</th>
+                <th class="text-right">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for userprofile in userprofile %}
+            <tr>
+                
+                <td> {{userprofile.firstname}}</td>
+                <td> {{userprofile.lastname}}</td>
+                <td> {{userprofile.email}}</td>
+                <td> {{userprofile.phone}}</td>
+                <td> <img src="/{{userprofile.profile_pic }}" alt="Profile Pic" height="60px" width="60px" /></td>
+                <td>{{userprofile.created_date}}</td>
+                
+             
+                <td class="text-right">
+                    <button class="btn btn-primary badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href='/admins/updateuserprofile/{{userprofile.id}}'>EDIT</a> </button>
+                    <button class="btn btn-danger badge-pill" style="width: 80px;"><a  style="text-decoration: none;color: white;" href='/admins/deleteuserprofile/{{userprofile.id}}'>DELETE</a> </button>
+                </td>
+            </tr>
+            {% endfor %}
+ 
+        </tbody>
+    
+    </table>
+</div>
+ 
+{% endblock %}

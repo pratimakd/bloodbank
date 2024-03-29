@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+
+<style>
+    /*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+    section {
+        padding: 60px 0;
+        overflow: hidden;
+    }
+
+    .section-title {
+        text-align: center;
+        padding: 30px 0;
+        position: relative;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        color: #191919;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-title span {
+        position: absolute;
+        top: 30px;
+        color: #f4f4f4;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-weight: 700;
+        font-size: 52px;
+        text-transform: uppercase;
+        line-height: 0;
+    }
+
+    .section-title p {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    @media (max-width: 575px) {
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            font-size: 38px;
+        }
+    }
+
+    /*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+    .about .content h3 {
+        font-weight: 600;
+        font-size: 26px;
+    }
+
+    .about .content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .about .content ul li {
+        padding-bottom: 10px;
+    }
+
+    .about .content ul i {
+        font-size: 20px;
+        padding-right: 4px;
+        color: #cc1616;
+    }
+
+    .about .content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+    .counts {
+        padding-top: 80px;
+    }
+
+    .counts .count-box {
+        padding: 30px 30px 25px 30px;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        background-color: #ff5757;
+        box-shadow: 0px 2px 35px rgba(83, 79, 100, 0.205);
+        border-radius: 4px;
+    }
+
+    .sss {
+        color: white;
+    }
+
+    .counts .count-box i {
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        top: -27px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        background: #fff;
+        color: #fafafa;
+        border-radius: 50px;
+        border: 2px solid #fff;
+        box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .counts .count-box span {
+        font-size: 36px;
+        display: block;
+        font-weight: 700;
+        color: #fff9f9;
+    }
+
+    .counts .count-box p {
+        padding: 0;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+    }
+
+    /*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+    .why-us {
+        padding-top: 10px;
+    }
+
+    .why-us .box {
+        padding: 50px 30px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        transition: all ease-in-out 0.3s;
+        background-color: #ececec;
+    }
+
+    .why-us .box span {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        color: #ed5b5b;
+    }
+
+    .why-us .box h4 {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 0;
+        margin: 20px 0;
+        color: #191919;
+    }
+
+    .aaa {
+        border-color: #cc1616;
+    }
+
+    .why-us .box p {
+        color: #000000;
+        font-size: 16px;
+        margin: 0;
+        text-align: center;
+        text-decoration: underline;
+
+        font-family: "Poppins", sans-serif;
+    }
+
+    .why-us .box:hover {
+        background: #cc1616;
+        padding: 30px 30px 70px 30px;
+        box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .why-us .box:hover span,
+    .why-us .box:hover h4,
+    .why-us .box:hover p {
+        color: #fff;
+    }
+</style>
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-duration="1000">
+                <img src="static/images/announcement.png" class="img-fluid" alt="announcement">
+            </div>
+            <div class="col-lg-6 pt-5 order-2 order-lg-1 content" data-aos="fade-right">
+                <h3 style="width: 800; font-size:50px; ">COVID-19 Grantees</h3>
+                <p class="fst-italic" style="margin-top: 40px; color:#000000c7">
+                    <em>Hamro </em>Blood Bank supporting Nepal based blood volunteer organizations with activities that
+                    measurably improve
+                    donor motivation and retention. Our collaboration and grant has been focused on “safety protocol”
+                    compliance to promote donor care and experience during this pandemic.<br />
+                    Six different volunteer groups/organizations were awarded with the COVID-19 grant.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======= Counts Section ======= -->
+<section id="counts" class="counts">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="count-box">
+                    <i><img src="static/images/bd.png" style="height: 45px;"></i>
+
+                    <p class="sss">Happy Clients</p>
+                    <h2 class="sss">11</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+                <div class="count-box">
+                    <i><img src="static/images/ghar.png" style="height: 45px;"></i>
+
+                    <p class="sss">Ghar dailo awareness programs</p>
+                    <h2 class="sss">3</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+                <div class="count-box">
+                    <i><img src="static/images/mbd.png" style="height: 45px;"></i>
+                    <p class="sss">Male donors motivated</p>
+                    <h2 class="sss">168</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 py-5">
+                <div class="count-box">
+                    <i><img src="static/images/fbd.png" style="height: 45px;"></i>
+                    <p class="sss">Female donors motivated</p>
+                    <h2 class="sss">10</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 py-5">
+                <div class="count-box">
+                    <i><img src="static/images/bdm.png" style="height: 45px;"></i>
+
+                    <p class="sss">Blood request recived</p>
+                    <h2 class="sss">200+</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 py-5">
+                <div class="count-box">
+                    <i><img src="static/images/b.png" style="height: 45px;"></i>
+
+                    <p class="sss">Blood donors managed</p>
+                    <h2 class="sss">78</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Counts Section -->
+
+<section id="why-us" class="why-us">
+    <div class="container">
+        <div class="row">
+            <a href="https://www.facebook.com/youthforbloodchitwan"> <div class="col-lg-4" data-aos="fade-up">
+                <div class="box">
+
+                    <span><img src="static/images/yb.jpg" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Youth For Blood - Chitwan</p>
+                </div>
+                </a>
+            </div>
+            <a href = "http://bloodfornepal.org/">
+            <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="150">
+                <div class="box">
+                    <span><img src="static/images/bn.png" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Blood For Nepal</p>
+                </div>
+</a>
+            </div>
+            <a href="https://www.facebook.com/BloodPalpage">
+            <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                <div class="box">
+                    <span><img src="static/images/bp.jpg" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Bloodpal</p>
+                </div>
+                </a>
+            </div>
+            <a href="https://hamrolifebank.com/covid19-grantee">
+            <div class="col-lg-4 mt-4 mt-lg-0 py-5" data-aos="fade-up" data-aos-delay="450">
+                <div class="box">
+                    <span><img src="static/images/un.jpg" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Emergency Response Center</p>
+                </div>
+                </a>
+            </div>
+            <a href="https://www.facebook.com/rotaractKIST">
+            <div class="col-lg-4 mt-4 mt-lg-0 py-5" data-aos="fade-up" data-aos-delay="600">
+                <div class="box">
+                    <span><img src="static/images/kist.jpg" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Rotaract Club of KIST Medical College</p>
+                </div>
+                </a>
+            </div>
+            <a href="https://www.facebook.com/negativedonar">
+            <div class="col-lg-4 mt-4 mt-lg-0 py-5" data-aos="fade-up" data-aos-delay="750">
+                <div class="box">
+                    <span><img src="static/images/nbg.jpg" class="aaa" style="height: 180px;"></span>
+                    <p class="mt-3">Friends of Rh Negative</p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

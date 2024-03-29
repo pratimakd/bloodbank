@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>All Teams</title>
+
+{% endblock %}
+{% block content %}
+<style>
+
+    .success_message{
+    background:#4DB6AC;
+    color:#fff;
+    border-radius:5px;
+}
+
+    .error_message{
+    background:green;
+    color:#fff;
+    border-radius:5px;
+    }
+</style>
+
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="col-md-12">
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <br><br><br>
+            <h1 class="text-center">All Members</h1>
+            <div class="card py-2 px-2">
+                <a class="btn btn-success btn-sm ml-auto mb-2"  href="/addTeamForm">Add New Member</a>
+                
+                <table class="table-striped">
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Expert</th>
+                        <th>Action</th>
+                    </tr>
+                    {% for team in teams %}
+                    <tr>
+                        <td> <img src="/{{ team.image }}" style=" width:100px !important; height:150px;" ></td>
+                        <td> {{ team.name }}</td>
+                        <td> {{ team.expert }}</td>
+                        
+                        <td><a href="/updateTeamForm/{{team.id}}" class="btn btn-primary btn-sm">Edit</a> &nbsp;
+                            <a href="/deleteTeamForm/{{team.id}}" class="btn btn-danger btn-sm"  onclick="return confirm('Are you sure want to delete this person?')">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
